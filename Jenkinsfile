@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Checking access logs for 4xx and 5xx errors...'
                 // Поиск ошибок 400-599 в логах. Если ошибок нет, выведет сообщение.
-                sh 'grep -E " (4|5)[0-9]{2} " /var/log/apache2/access.log || echo "No errors found"'
+                sh "sudo grep -E ' (4|5)[0-9]{2} ' /var/log/apache2/access.log || echo 'No errors found'"
             }
         }
     }
